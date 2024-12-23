@@ -5,10 +5,8 @@
         <title>Russian GOST R 7.0.5-2008 (numeric, sorted alphabetically, with doi, Ру́сский)</title>
         <title-short>GOST R 7.0.5-2008</title-short>
         <summary>Russian GOST-2008 style. Adds DOI to the end if it is in the entry.</summary>
-        <!-- Must appear once and contain a stable, unique identifier to establish the identity of the style.
-        For historical reasons, existing styles may use URIs, but new styles should use a UUID to guarantee stability and uniqueness. -->
-        <id>https://github.com/tropintropin/CSL_GOST/blob/404e12fefc9170e4673fe962d6684c0eddc77776/gost-r-7-0-5-2008-numeric-alphabetical-with-doi.csl</id>
-        <link href="https://github.com/tropintropin/CSL_GOST/blob/404e12fefc9170e4673fe962d6684c0eddc77776/gost-r-7-0-5-2008-numeric-alphabetical-with-doi.csl" rel="self"/>
+        <id>3a3dd9a7-8d61-4eb6-a615-fef74bb91f40</id>
+        <link href="git@github.com:tropintropin/CSL_GOST.git" rel="self"/>
         <!-- GOST GOST R 7.0.5-2008 System of standards on information, librarianship and publishing.
         Bibliographic reference. General requirements and rules of making -->
         <link href="https://protect.gost.ru/document.aspx?control=7&id=173511" rel="documentation"/>
