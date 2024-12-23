@@ -1,17 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="ru-RU">
+<!-- CSL 1.0.2 SPECIFICATION: https://docs.citationstyles.org/en/stable/specification.html -->
     <info>
         <title>Russian GOST R 7.0.5-2008 (numeric, sorted alphabetically, with doi, Ру́сский)</title>
-        <title-short>GOST R 7.0.5-2008 (numeric, sorted alphabetically, with doi)</title-short>
-        <!-- <id>LINK</id> -->
-        <!-- <link href="LINK" rel="self"/> -->
+        <title-short>GOST R 7.0.5-2008</title-short>
+        <summary>Russian GOST-2008 style. Added DOI, if exist.</summary>
+        <!-- Must appear once and contain a stable, unique identifier to establish the identity of the style.
+        For historical reasons, existing styles may use URIs, but new styles should use a UUID to guarantee stability and uniqueness. -->
+        <id>https://github.com/tropintropin/CSL_GOST/blob/404e12fefc9170e4673fe962d6684c0eddc77776/gost-r-7-0-5-2008-numeric-alphabetical-with-doi.csl</id>
+        <link href="https://github.com/tropintropin/CSL_GOST/blob/404e12fefc9170e4673fe962d6684c0eddc77776/gost-r-7-0-5-2008-numeric-alphabetical-with-doi.csl" rel="self"/>
+        <!-- GOST GOST R 7.0.5-2008 System of standards on information, librarianship and publishing.
+        Bibliographic reference. General requirements and rules of making -->
         <link href="https://protect.gost.ru/document.aspx?control=7&id=173511" rel="documentation"/>
+        <!-- GOST R 7.0.108-2022 System of standards on information, librarianship and publishing.
+        Bibliographic references on electronic documents in information and telecommunication networks.
+        General requirements for rules of making and presentation -->
+        <link href="https://protect.gost.ru/document.aspx?control=7&id=244975" rel="documentation"/>
+        <!-- GOST R 7.0.12-2011 System of standards on information, librarianship and publishing bibliographic record.
+        Abbreviation of words and word combinations in russian. General requirements and rules -->
+        <link href="https://protect.gost.ru/document.aspx?control=7&id=179586" rel="documentation"/>
+        <!-- GOST R 7.11-2004 System of standards on information, librarianship and publishing.
+        Bibliographic description and references.Rules for the abbreviation of words
+        and word combinations in foreign European languages -->
+        <link href="https://protect.gost.ru/document.aspx?control=7&id=129134" rel="documentation"/>
         <author>
             <name>Valery Tropin</name>
+            <email>tropin.tropin@gmail.com</email>
+            <uri>https://tropin.one</uri>
         </author>
         <category citation-format="numeric"/>
         <category field="generic-base"/>
-        <summary>Russian GOST-2008 style. Added DOI, if exist.</summary>
-        <!-- <updated></updated> -->
+        <updated>2024-12-23T17:40:30+03:00</updated>
         <rights license="https://creativecommons.org/licenses/by-sa/4.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License</rights>
     </info>
+    <!-- <locale></locale>
+    <macro></macro>
+    <citation></citation>
+    <bibliography></bibliography> -->
+</style>
