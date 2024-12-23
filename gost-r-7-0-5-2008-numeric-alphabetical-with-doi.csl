@@ -4,7 +4,7 @@
     <info>
         <title>Russian GOST R 7.0.5-2008 (numeric, sorted alphabetically, with doi, Ру́сский)</title>
         <title-short>GOST R 7.0.5-2008</title-short>
-        <summary>Russian GOST-2008 style. Added DOI, if exist.</summary>
+        <summary>Russian GOST-2008 style. Adds DOI to the end if it is in the entry.</summary>
         <!-- Must appear once and contain a stable, unique identifier to establish the identity of the style.
         For historical reasons, existing styles may use URIs, but new styles should use a UUID to guarantee stability and uniqueness. -->
         <id>https://github.com/tropintropin/CSL_GOST/blob/404e12fefc9170e4673fe962d6684c0eddc77776/gost-r-7-0-5-2008-numeric-alphabetical-with-doi.csl</id>
@@ -33,8 +33,41 @@
         <updated>2024-12-23T17:40:30+03:00</updated>
         <rights license="https://creativecommons.org/licenses/by-sa/4.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License</rights>
     </info>
-    <!-- <locale></locale>
+    <locale xml:lang="ru">
+        <terms>
+            <term name="et-al"> и др.</term>
+            <term form="short" name="editor">ред.</term>
+            <term form="verb-short" name="editor">под ред.</term>
+            <term form="short" name="editorial-director">отв. ред.</term>
+            <term form="verb-short" name="editorial-director">под отв. ред.</term>
+            <term form="short" name="editortranslator">ред. и пер.</term>
+            <term form="short" name="translator">пер.</term>
+            <term form="short" name="edition">изд.</term>
+            <term name="accessed">дата обращения</term>
+            <term form="short" name="page">с.</term>
+            <term form="symbol" name="issue">№</term>
+            <term form="short" name="issue">вып.</term>
+            <term form="short" name="collection-title">сер.</term>
+			<term form="short" name="number-of-volumes">т.</term>
+			<term form="short" name="thesis">дис.</term>
+            <term form="short" name="circa">ок.</term>
+            <term form="short" name="cited">цит. по</term>
+            <term name="page-range-delimiter">—</term>
+            <term name="season-01">весна</term>
+            <term name="season-02">лето</term>
+            <term name="season-03">осень</term>
+            <term name="season-04">зима</term>
+        </terms>
+    </locale>
     <macro></macro>
-    <citation></citation>
-    <bibliography></bibliography> -->
+    <citation>
+        <layout>
+            <!--  -->
+        </layout>
+    </citation>
+    <bibliography>
+        <layout>
+            <!--  -->
+        </layout>
+    </bibliography>
 </style>
