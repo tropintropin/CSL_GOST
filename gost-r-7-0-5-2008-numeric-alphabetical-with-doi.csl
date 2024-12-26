@@ -40,7 +40,7 @@
             <term form="verb-short" name="editorial-director">под отв. ред.</term>
             <term form="short" name="editortranslator">ред. и пер.</term>
             <term form="short" name="translator">пер.</term>
-            <term form="short" name="edition">изд.</term>
+            <term form="short" name="edition">-e изд.</term>
             <term name="accessed">дата обращения</term>
             <term form="short" name="page">с.</term>
             <term form="symbol" name="issue">№</term>
@@ -57,18 +57,100 @@
             <term name="season-04">зима</term>
         </terms>
     </locale>
-    <macro></macro>
+    <!-- bibliography → layout -->
+    <macro name="citation-number">
+        <text variable="citation-number" suffix=". "/>
+    </macro>
+    <!-- bibliography → sort -->
+    <!-- TODO -->
+    <macro name="language-sort">
+        <choose>
+            <if variable="language" match="any" value="ru RU Ru rus RUS Rus russian Russian RUSSIAN">
+                <text value="0"/>
+            </if>
+            <else>
+                <text value="1"/>
+            </else>
+        </choose>
+    </macro>
+    <!-- bibliography → sort -->
+    <!-- bibliography → layout -->
+    <macro name="author-first">
+        <names variable="author">
+            <name delimiter-precedes-last="always" initialize-with=". " name-as-sort-order="all" sort-separator=" "/>
+            <label form="short" strip-periods="true" prefix=" " suffix="."/>
+        </names>
+    </macro>
+    <!-- bibliography → layout -->
+    <macro name="title">
+        <text variable="title"/>
+    </macro>
+    <!-- bibliography → layout -->
+    <macro name="editor">
+        <names variable="editor" delimiter=", " suffix=",">
+            <label prefix=" " suffix=" "/>
+            <name initialize-with=". "/>
+        </names>
+    </macro>
+    <!-- bibliography → layout -->
+    <macro name="translator">
+        <names variable="translator" delimiter="," suffix=",">
+            <label prefix=" " suffix=" "/>
+            <name initialize-with=". "/>
+        </names>
+    </macro>
+    <!-- bibliography → layout -->
+    <macro name="publisher">
+        <group suffix=",">
+            <text variable="publisher-place" suffix=":"/>
+            <text variable="publisher" prefix=" "/>
+        </group>
+        <text macro="year-date" prefix=" " suffix="."/>
+    </macro>
+    <!-- bibliography → layout -->
+    <macro name="year-date">
+        <date variable="issued">
+            <date-part name="year"/>
+        </date>
+    </macro>
     <citation collapse="citation-number">
         <sort>
             <key variable="citation-number"/>
         </sort>
         <layout prefix="[" suffix="]" delimiter=", ">
             <text variable="citation-number"/>
+            <!-- TODO -->
+            <choose>
+                <if variable="locator">
+                    <label variable="locator" form="short" prefix=", " suffix=" "/>
+                    <text variable="locator"/>
+                </if>        
+            </choose>
         </layout>
     </citation>
     <bibliography>
-        <layout>
-            <!--  -->
+        <sort>
+            <key macro="language-sort"/>
+            <key macro="author-first"/>
+            <key variable="issued"/>
+        </sort>
+        <layout suffix=".">
+            <text macro="citation-number"/>
+            <text macro="author-first" suffix=" "/>
+            <choose>
+                <if type="book" match="any">
+                    <group>
+                        <group delimiter=" ">
+                        <text macro="title"/>
+                        <text macro="editor"/>
+                        <text macro="translator"/>
+                        <text variable="edition"/>
+                        </group>
+                        <text macro="publisher" prefix=" "/>
+                        <text variable="number-of-pages" prefix=" " suffix=" c."/>
+                    </group>
+                </if>
+            </choose>
         </layout>
     </bibliography>
 </style>
