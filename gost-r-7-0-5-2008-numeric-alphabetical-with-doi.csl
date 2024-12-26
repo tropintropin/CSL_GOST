@@ -62,10 +62,9 @@
         <text variable="citation-number" suffix=". "/>
     </macro>
     <!-- bibliography → sort -->
-    <!-- TODO -->
     <macro name="language-sort">
         <choose>
-            <if variable="language" match="any" value="ru RU Ru rus RUS Rus russian Russian RUSSIAN">
+            <if variable="language" match="regex">^ru[-\w]*</if>
                 <text value="0"/>
             </if>
             <else>
@@ -74,6 +73,12 @@
         </choose>
     </macro>
     <!-- bibliography → sort -->
+    <macro name="author-sort-key">
+        <names variable="author">
+            <name name-as-sort-order="all" sort-separator="_" suffix="_"/>
+            <text variable="position"/>
+        </names>
+    </macro>
     <!-- bibliography → layout -->
     <macro name="author-first">
         <names variable="author">
@@ -119,7 +124,6 @@
         </sort>
         <layout prefix="[" suffix="]" delimiter=", ">
             <text variable="citation-number"/>
-            <!-- TODO -->
             <choose>
                 <if variable="locator">
                     <label variable="locator" form="short" prefix=", " suffix=" "/>
@@ -131,7 +135,7 @@
     <bibliography>
         <sort>
             <key macro="language-sort"/>
-            <key macro="author-first"/>
+            <key macro="author-sort-key"/>
             <key variable="issued"/>
         </sort>
         <layout suffix=".">
@@ -141,13 +145,14 @@
                 <if type="book" match="any">
                     <group>
                         <group delimiter=" ">
-                        <text macro="title"/>
-                        <text macro="editor"/>
-                        <text macro="translator"/>
-                        <text variable="edition"/>
+                            <text macro="title"/>
+                            <text macro="editor"/>
+                            <text macro="translator"/>
+                            <text variable="edition"/>
                         </group>
                         <text macro="publisher" prefix=" "/>
                         <text variable="number-of-pages" prefix=" " suffix=" c."/>
+                        <text variable="DOI" prefix=" DOI: "/>
                     </group>
                 </if>
             </choose>
